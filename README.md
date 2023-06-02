@@ -10,8 +10,8 @@ Este repositório contém um projeto de software para gerenciamento de chamados,
 - Interface para Administrador: Os administradores (técnicos) possuem acesso a uma interface exclusiva onde é possível visualizar, excluir ou editar um chamado, além de poder tornar um usuário padrão em um admin. <br/>
 <br/>
 Deixei criado por padrão um usuário com permissão de administrador. <br/>
-> Email: departamentoti@email.com <br/>
-> Senha: 123456 <br/>
+- Email: departamentoti@email.com <br/>
+- Senha: 123456 <br/>
 
 ## Técnologias Utilizadas
 
