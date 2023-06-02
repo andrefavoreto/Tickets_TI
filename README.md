@@ -26,4 +26,4 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 3. Instale as dependências necessárias: ```pip install -r requirements.txt```
 4. Configure as variáveis de ambiente necessárias, como as credenciais do banco de dados ou outras configurações específicas do seu ambiente.
 5. Inicie o servidor: ```py main.py```
-6. Acesse o software pelo seu navegador em [http://localhost:8000/](http://localhost:8000/)
+6. Acesse o software pelo seu navegador em [http://127.0.0.1:5000](http://127.0.0.1:5000)
