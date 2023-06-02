@@ -1,0 +1,58 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Aplicação - Criar Conta
+{% endblock %}
+
+
+    {% block formulario %}
+    <div class="formulario" id="formulario-criarconta">
+        <form action="" method="POST">
+        {{ form.csrf_token }}
+
+        <h3>Crie sua conta</h3>
+
+        <div class="linha">
+            <div class="campo">
+                {{ form.matricula.label }}
+                {{ form.matricula(placeholder="Digite o ID da sua matrícula...")}}
+            </div>
+    
+            <div class="select">
+                {{ form.departamento.label }}
+                {{ form.departamento }}
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="campo">
+                {{ form.email.label }}
+                {{ form.email(placeholder="Digite seu email...")}}
+            </div>
+
+            <div class="campo">
+                {{ form.username.label }}
+                {{ form.username(placeholder="Digite seu nome de usuário...") }}
+            </div>
+        </div>
+        <div class="linha">
+                
+            <div class="campo">
+                {{ form.senha.label }}
+                {{ form.senha(placeholder="Digite sua senha...") }}
+            </div>
+    
+            <div class="campo">
+                {{ form.confirmacao_senha.label }}
+                {{ form.confirmacao_senha(placeholder="Confirme sua senha...") }}
+            </div>
+        </div>
+
+        <div class="btn">
+            {{ form.botao_confirmacao }}
+            <a class="btn-criar" href="{{url_for('homepage')}}">Já tem uma conta? Clique aqui</a>
+        </div>
+
+        </form>
+    </div>
+{% endblock %}

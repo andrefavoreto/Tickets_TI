@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>
+        {% block titulo %}
+            Homepage
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <section>
+        {% with mensagens = get_flashed_messages() %}
+        {% if mensagens %}
+            <div id="alerta">
+                {% for msg in mensagens %}
+                <div>
+                    Alerta! {{ msg }}
+                    <a onclick="Fechar()" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="13px" viewBox="0 0 24 24" id="close"><path d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg>
+                    </a>
+                </div>
+                {% endfor%}
+            </div>
+        {% endif %}
+        {% endwith %}
+    
+        {% block formulario %}
+        <div class="formulario" style="overflow-y: hidden; top: 50%;">
+            <form method="POST">
+            
+                {{ form.csrf_token }}
+        
+                <h3>Login</h3>
+                
+                <div class="campo">
+                {{ form.email.label }}
+                {{ form.email(placeholder="Digite seu email...")}}
+                </div>
+        
+                <div class="campo">
+                {{ form.senha.label }}
+                {{ form.senha(placeholder="Digite sua senha...") }}
+                </div>
+        
+                <div class="bool">
+                    {{ form.remember }}
+                    {{ form.remember.label }}
+                </div>
+        
+                <div class="btn">
+                    {{ form.botao_confirmacao }}
+                    <a class="btn-criar" href="{{url_for('criarconta')}}">Crie sua conta aqui!</a>
+                </div>
+            </form>
+        </div>
+        {% endblock %}
+
+    </section>
+</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>

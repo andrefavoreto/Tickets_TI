@@ -1,0 +1,67 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Aplicação - Chamado {{chamado.id}}
+{% endblock %}
+
+{% block formulario %}
+<nav class="navbar">
+    
+    <div id="menu-lista">
+        {% if current_user.e_admin == True %}
+        <a class="item" href="/admin">
+            Admin
+        </a>
+        {% endif %}
+        <a class="item" href="{{url_for('perfil', id_usuario=current_user.id)}}">
+            Adicionar Chamado
+        </a>
+        <a class="item" id="selected" href="{{url_for('feed')}}">
+            Meus Chamados
+        </a>
+        <a class="item" href="{{url_for('logout')}}">
+            Sair
+        </a>
+    </div>
+    <div>
+        <p>Olá, {{ current_user.username }}</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" id="user"><path fill="#f8f8ff" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3-12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 7a7.489 7.489 0 0 1 6-3 7.489 7.489 0 0 1 6 3 7.489 7.489 0 0 1-6 3 7.489 7.489 0 0 1-6-3Z" clip-rule="evenodd"></path></svg>
+        <a class="btn-menu" id="menu-hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" id="menu"><path fill="#000" d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z"></path></svg>
+        </a>
+    </div>
+</nav>
+<div class="formulario" style="max-height: 600px;">
+    <form>
+
+        <h3 style="margin-bottom: 20px;">Detalhes</h3>
+
+        <div class="campo">
+            <label class="label"><b>Criado em:</b> {{ chamado.data_criacao.strftime('%d-%m-%Y') }}</label>
+        </div>
+        <div class="campo">
+            <label class="label"><b>Usuário:</b> {{chamado.usuario.username}}</label>
+        </div>
+        <div class="campo">
+            <label class="label"><b>E-mail:</b> {{chamado.usuario.email}}</label>
+        </div>
+        <div class="campo">
+            <label class="label"><b>ID Chamado:</b> {{chamado.id}}</label>
+        </div>
+        <div class="campo">
+            <label class="label"><b>Status:</b> {{chamado.status}}</label>
+        </div>
+        <div class="campo">
+            <label class="label"><b>Problema:</b> {{chamado.problema}}</label>
+        </div>
+        <div class="campo-descricao">
+            <label class="label"><b>Descrição:</b> {{chamado.descricao}}</label>
+        </div>
+    </form>
+
+    <a class="voltar" href="{{ url_for('feed') }}">
+        <?xml version="1.0" ?><svg id="Layer_1_1_" fill="#292929" width="16px" style="enable-background:new 0 0 16 16;" version="1.1" viewBox="0 0 16 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M10.354,12.646l-0.707,0.707L4.293,8l5.354-5.354  l0.707,0.707L5.707,8L10.354,12.646z"/></svg>
+        Voltar
+    </a>
+</div>
+{% endblock %}

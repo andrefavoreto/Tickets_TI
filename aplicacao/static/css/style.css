@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    height: 100vh;
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    overflow-y: scroll;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+div.formulario {
+    background-color: #fff;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 2px 2px 16px 3px rgba(0, 0, 0, 0.4);
+    overflow-y: scroll;
+}
+
+h3 {
+    text-align: center;
+    font-size: 32px;
+    color: #23303e;
+}
+
+form {
+    margin: 40px 20px;
+    display: grid;
+    grid-template-rows: 1fr .5fr;
+    text-align: center;
+
+}
+
+form label {
+    color: hsl(212, 27%, 19%);
+}
+
+div.formulario form div.linha {
+    display: flex;
+    gap: 10px;
+}
+
+div.formulario form div.campo, form div.select, form div.descricao, div.campo-descricao {
+    font-size: 12px;
+    margin: 5px 0px;
+    gap: 5px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+div.formulario form div.campo input, form div.select select, form div.descricao textarea{
+    min-width: 250px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: #e7e7e7;
+    color: black;
+    box-shadow: rgba(102, 102, 116, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+div.formulario form div.campo input:focus, form div.select select:focus, form div.descricao textarea:focus {
+    border: 2px solid #0083b0;
+    outline: none;
+    transition: .5s;
+}
+
+div.formulario form div.campo input::placeholder {
+    color: rgb(141, 141, 141);
+}
+
+div.formulario form div.bool {
+    color: #e7e7e7;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: start;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+div.formulario form div.descricao textarea {
+    height: 150px;
+    resize: none
+}
+
+div.formulario form div.btn {
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.formulario form div.btn input {
+    cursor: pointer;
+    font-size: 16px;
+    color: #f8f8ff;
+    background: linear-gradient(to right, #00b4db, transparent) #0083b0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    transition: background-color 1s;
+    place-content: center;
+}
+
+div.formulario form div.btn input:hover, div.btn input:focus {
+    background-color: #783ce9;
+    color: #fff;
+}
+
+div.formulario form div.btn a {
+    text-align: center;
+    margin: auto;
+    color: hsl(232, 10%, 55%);
+    font-size: 12px;
+}
+
+div.formulario form div.btn a:hover {
+    color: hsl(233, 8%, 44%);
+}
+
+.navbar {
+    background-color: #0083b0;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #c7c7c7;
+    font-weight: 700;
+}
+
+.navbar a.item {
+    color: #c7c7c7;
+    margin: 0px 20px;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.navbar a.item:hover {
+    transition: 250ms;
+    background-color: #009bcf7c;
+}
+
+.navbar a.item#selected {
+    color: #f8f8ff;
+}
+
+.navbar div {
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
+
+.navbar div p {
+    color: #f8f8ff;
+    margin: 0px 10px;
+}
+
+div.div-tabela {
+    overflow-x: auto;
+    margin: 0 10px;
+}
+
+table.tabela {
+    overflow-x: scroll;
+    font-size: 14px;
+    border-collapse: collapse;
+    margin: 60px auto;
+    border-radius: 10% 10% 0 0;
+    box-shadow: 2px 2px 16px 3px rgba(0, 0, 0, 0.4);
+}
+
+table.tabela .cabecalho {
+    color: #f8f8ff;
+    background-color: #23303e;
+}
+
+table.tabela .corpo {
+    border-bottom: 1px solid #666;
+    color: #23303e;
+    background-color: #f8f8ff;
+}
+
+table.tabela .cabecalho th, td {
+    text-align: left;
+    padding: 1em;
+    font-weight: 400;
+    align-items: center;
+}
+
+table.tabela .cabecalho th:nth-child(1) {
+    border-radius: 10px 0 0 0;
+}
+
+table.tabela .cabecalho th:nth-child(7) {
+    border-radius: 0 10px 0 0;
+}
+
+table.tabela .corpo td:nth-child(7) svg{
+    display: flex;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+a.voltar {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 100px;
+    color: #292929;
+    font-size: 18px;
+    margin: 5px 20px;
+    gap: 4px;
+    padding: 5px 13px;
+    font-weight: 600;
+}
+
+
+a.voltar:hover {
+    transition: .5s;
+    background-color: #e7e7e7;
+}
+
+div.campo-descricao {
+    word-break: break-all;
+}
+
+div.formulario form div.detalhes-linha {
+    display: flex;
+    gap: 20px;
+}
+
+#alerta {
+    background-color: #666;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 0 5px 5px 0;
+    z-index: 1;
+    position: absolute;
+    padding: 5px 10px;
+    align-items: center;
+    transition: .5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+#alerta div {
+    display: flex;
+}
+
+#alerta div a {
+    display: flex;
+}
+
+#alerta div svg {
+    display: flex;
+    margin: 0 5px;
+}
+
+.navbar div a.btn-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .shown {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .navbar a.item, a#selected.item, p {
+        font-size: 14px;
+    }
+
+    #menu-lista {
+        text-align: center;
+        display: none;
+    }
+
+    .navbar div a.btn-menu {
+        display: block;
+        float: right;
+        cursor: pointer;
+    }
+
+    nav.navbar {
+        transition: .5s;
+        display: flex;
+        text-align: right;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        gap: 40px;
+    }
+
+    .navbar div:nth-child(2) {
+        order: 1;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .navbar div:nth-child(2) p {
+        display: none;
+    }
+
+    .navbar div:nth-child(1) {
+        order: 2;
+    }
+
+    .navbar div a.btn-menu svg#menu {
+        float: right;
+        margin-right: 0;
+    }
+
+    svg#menu path {
+        fill: #fff;
+    }
+
+    div.formulario {
+        width: 90%;
+        margin-top: 0;
+    }
+
+    #formulario-criarconta {
+        top: 70%;
+    }
+
+    div.linha {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        grid-template-rows: .5fr 1fr;
+    }
+
+    div.div-tabela table {
+        font-size: 14px;
+    }
+
+    div.div-tabela .cabecalho th, tr.corpo td {
+        padding: 5px;
+    }
+}

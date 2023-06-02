@@ -1,0 +1,63 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Aplicação - Meus chamados
+{% endblock %}
+
+{% block formulario %}
+<nav class="navbar">
+    
+    <div id="menu-lista">
+        {% if current_user.e_admin == True %}
+        <a class="item" href="/admin">
+            Admin
+        </a>
+        {% endif %}
+        <a class="item" href="{{url_for('perfil', id_usuario=current_user.id)}}">
+            Adicionar Chamado
+        </a>
+        <a class="item" id="selected" href="{{url_for('feed')}}">
+            Meus Chamados
+        </a>
+        <a class="item" href="{{url_for('logout')}}">
+            Sair
+        </a>
+    </div>
+    <div>
+        <p>Olá, {{ current_user.username }}</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" id="user"><path fill="#f8f8ff" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3-12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 7a7.489 7.489 0 0 1 6-3 7.489 7.489 0 0 1 6 3 7.489 7.489 0 0 1-6 3 7.489 7.489 0 0 1-6-3Z" clip-rule="evenodd"></path></svg>
+        <a class="btn-menu" id="menu-hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" id="menu"><path fill="#000" d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z"></path></svg>
+        </a>
+    </div>
+</nav>
+
+<div class="div-tabela">
+    <table class="tabela">
+        <tr class="cabecalho">
+            <th>Nº do Chamado</th>
+            <th>Usuário</th>
+            <th>E-mail</th>
+            <th>Problema</th>
+            <th>Status</th>
+            <th>Data de Criação</th>
+            <th>Opções</th>
+        </tr>
+        {% for chamado in chamados %}
+        <tr class="corpo">
+            <td>{{ chamado.id }}</td>
+            <td>{{ chamado.usuario.username }}</td>
+            <td>{{ chamado.usuario.email }}</td>
+            <td>{{ chamado.problema }}</td>
+            <td>{{ chamado.status }}</td>
+            <td>{{ chamado.data_criacao.strftime('%d-%m-%Y') }}</td>
+            <td class="opcoes">
+                <a href="/detalhes/{{chamado.id}}" title="Visualizar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100" id="view" text-anchor="middle"><path d="M50 34c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm0 28c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12zm44.4-13.4l-8.6-8.7C76.3 30.3 63.6 25 50 25s-26.3 5.3-35.8 14.9l-8.6 8.7c-.8.8-.8 2 0 2.8l8.6 8.7C23.7 69.7 36.4 75 50 75s26.3-5.3 35.8-14.9l8.6-8.7c.8-.8.8-2 0-2.8zM83 57.3C74.2 66.1 62.5 71 50 71s-24.2-4.9-33-13.7L9.8 50l7.2-7.3C25.8 33.9 37.5 29 50 29s24.2 4.9 33 13.7l7.2 7.3-7.2 7.3z"></path><path fill="#00F" d="M944-790V894H-840V-790H944m8-8H-848V902H952V-798z"></path></svg>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+</div>

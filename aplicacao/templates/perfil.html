@@ -1,0 +1,58 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Aplicação - Perfil
+{% endblock %}
+
+
+{% block formulario %}
+<nav class="navbar">
+    
+    <div id="menu-lista">
+        {% if current_user.e_admin == True %}
+        <a class="item" href="/admin">
+            Admin
+        </a>
+        {% endif %}
+        <a class="item" id="selected" href="{{url_for('perfil', id_usuario=current_user.id)}}">
+            Adicionar Chamado
+        </a>
+        <a class="item" href="{{url_for('feed')}}">
+            Meus Chamados
+        </a>
+        <a class="item" href="{{url_for('logout')}}">
+            Sair
+        </a>
+    </div>
+    <div>
+        <p>Olá, {{ usuario.username }}</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" id="user"><path fill="#f8f8ff" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3-12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 7a7.489 7.489 0 0 1 6-3 7.489 7.489 0 0 1 6 3 7.489 7.489 0 0 1-6 3 7.489 7.489 0 0 1-6-3Z" clip-rule="evenodd"></path></svg>
+        <a class="btn-menu" id="menu-hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" id="menu"><path fill="#000" d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z"></path></svg>
+        </a>
+    </div>
+</nav>
+
+
+<div class="formulario" style="overflow-y: hidden;">
+    <form method="POST">
+        {{ form.csrf_token }}
+        <h3>Adicione um chamado</h3>
+
+        <div class="select">
+            {{ form.problema.label }}
+            {{ form.problema }}
+        </div>
+
+        <div class="descricao">
+            {{ form.descricao.label }}
+            {{ form.descricao(placeholder="Detalhe o ocorrido...") }}
+        </div>
+
+        <div class="btn">
+            {{ form.botao_confirmacao }}
+        </div>
+    </form>
+</div>
+{% endblock %}
+
