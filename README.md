@@ -1,4 +1,4 @@
-# Software para gerenciamento de chamados internos de TI
+# Software para gerenciamento de chamados de TI
 
 Este repositório contém um projeto de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
 
