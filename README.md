@@ -11,7 +11,7 @@ Este repositório contém um projeto de software para gerenciamento de chamados,
 <br/>
 Deixei criado por padrão um usuário com permissão de administrador <br/>
 - email: departamentoti@email.com <br/>
-- senha: 123456 <br/>**
+- senha: 123456 <br/>
 
 ## Técnologias Utilizadas
 
