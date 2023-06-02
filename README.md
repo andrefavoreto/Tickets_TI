@@ -18,3 +18,12 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 - Linguagem de Programação: Python; <br/>
 - Framework: Flask; <br/>
 - Banco de Dados: SQLalchemy - SQlite3; <br/>
+
+## Instalação
+
+1. Clone ou baixe este repositório em sua máquina local
+2. Acesse o diretório do projeto
+3. Instale as dependências necessárias </br> ```pip install -r requirements.txt```
+4. Configure as variáveis de ambiente necessárias, como as credenciais do banco de dados ou outras configurações específicas do seu ambiente.
+5. Inicie o servidor: </br> ```py main.py```
+6. Acesse o software pelo seu navegador em [http://localhost:8000/](http://localhost:8000/)
