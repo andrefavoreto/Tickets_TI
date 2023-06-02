@@ -9,7 +9,7 @@ Este repositório contém um projeto de software para gerenciamento de chamados,
 - Histórico e relatórios: O sistema mantém um histórico completo de todos os chamados registrados, permitindo uma análise posterior e a geração de relatórios para avaliar o desempenho e a produtividade da equipe de suporte. <br/>
 - Interface para Administrador: Os administradores (técnicos) possuem acesso a uma interface exclusiva onde é possível visualizar, excluir ou editar um chamado, além de poder tornar um usuário padrão em um admin. <br/>
 <br/>
-Deixei criado por padrão um usuário com permissão de administrador <br/>
+#Deixei criado por padrão um usuário com permissão de administrador <br/>
 > Email: departamentoti@email.com <br/>
 > Senha: 123456 <br/>
 
