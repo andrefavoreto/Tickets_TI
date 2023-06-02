@@ -18,7 +18,8 @@ class FormCriarConta(FlaskForm):
                                     ('Marketing','Marketing'),
                                     ('Administração', 'Administração'), 
                                     ('Segurança', 'Segurança'), 
-                                    ('Operações', 'Operações')], default=0)
+                                    ('Operações', 'Operações'), 
+                                    ('Informática/TI', 'Informática/TI')], default=0)
     email = StringField("E-mail", validators=[DataRequired(), Email()])
     username = StringField("Nome de usuário", validators=[DataRequired()])
     senha = PasswordField("Senha", validators=[DataRequired(), Length(6, 20)])

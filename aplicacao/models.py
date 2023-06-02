@@ -55,6 +55,7 @@ class ControlUsuario(ModelView):
     can_view_details = True
     can_edit = False
     can_create = False
+    can_delete = False
 
 
 class ControlChamado(ModelView):
