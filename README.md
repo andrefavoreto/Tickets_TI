@@ -17,6 +17,7 @@ O projeto a seguir se trata de software para gerenciamento de chamados, desenvol
 - Cadastro de chamados: O usuário pode criar e registrar novos chamados, fornecendo informações detalhadas sobre o problema ou solicitação. <br/>
 - Histórico e relatórios: O sistema mantém um histórico completo de todos os chamados registrados, permitindo uma análise posterior e a geração de relatórios para avaliar o desempenho e a produtividade da equipe de suporte. <br/>
 - Interface para Administrador: Os administradores (técnicos) possuem acesso a uma interface exclusiva onde é possível visualizar, excluir ou editar um chamado, além de poder tornar um usuário padrão em um admin. <br/>
+- Busca com Filtro: Para os administradores é possível filtrar os chamados ao realizar uma busca. <br/>
 <br/>
 Deixei criado por padrão um usuário com permissão de administrador. <br/>
 - Email: departamentoti@email.com <br/>
