@@ -1,8 +1,10 @@
 # Software para gerenciamento de chamados de TI
 
-![Tela-add-chamado](visualização/tela-adicionar-chamado.png)
+O projeto a seguir se trata de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
 
-Este repositório contém um projeto de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
+## Índice
+
+
 
 ## Funcionalidades
 
@@ -20,6 +22,10 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 - Linguagem de Programação: Python; <br/>
 - Framework: Flask; <br/>
 - Banco de Dados: SQLalchemy - SQlite3; <br/>
+
+## Screenshots
+
+[Veja](visualização)
 
 ## Instalação
 
