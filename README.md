@@ -1,6 +1,9 @@
 # Software para gerenciamento de chamados de TI
 
-![Tela-add-chamado](visualização/tela-adicionar-chamado.png)
+<details>
+  <summary>The title of the image group</summary>
+  ![Tela-add-chamado](visualização/tela-adicionar-chamado.png)
+</details>
 
 Este repositório contém um projeto de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
 
