@@ -6,7 +6,7 @@ O projeto a seguir se trata de software para gerenciamento de chamados, desenvol
 
 <!--ts-->
 * [Funcionalidades](#Funcionalidades)
-* [Técnologias Utilizadas](#Técnologias Utilizadas)
+* [Técnologias Utilizadas](#Técnologias-Utilizadas)
 * [Screenshots](#Screenshots)
 * [Instalação](#Instalação)
 <!--te-->
@@ -30,12 +30,12 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 
 ## Screenshots
 
-[Login](visualização/tela-login.png)
-[Registro de Usuário](visualização/tela-registrar.png)
-[Registro de Chamado](visualização/tela-adicionar=chamado.png)
-[Ver meus Chamados](visualização/tela-meus-chamados.png)
-[Detalhes do Chamado](visualização/tela-detalhes.png)
-[Interface Admin](visualização/interface-admin-chamados.png)
+- [Login](visualização/tela-login.png)
+- [Registro de Usuário](visualização/tela-registrar.png)
+- [Registro de Chamado](visualização/tela-adicionar=chamado.png)
+- [Ver meus Chamados](visualização/tela-meus-chamados.png)
+- [Detalhes do Chamado](visualização/tela-detalhes.png)
+- [Interface Admin](visualização/interface-admin-chamados.png)
 
 ## Instalação
 
