@@ -1,7 +1,7 @@
 # Software para gerenciamento de chamados de TI
 
 <details>
-  <summary>The title of the image group</summary>
+  <summary>The title of the image group</summary><details>
   ![Tela-add-chamado](visualização/tela-adicionar-chamado.png)
 </details>
 
