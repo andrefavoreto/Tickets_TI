@@ -1,4 +1,4 @@
-# Software para gerenciamento de chamados internos de TI
+# Software para gerenciamento de chamados de TI
 
 Este repositório contém um projeto de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
 
@@ -18,3 +18,12 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 - Linguagem de Programação: Python; <br/>
 - Framework: Flask; <br/>
 - Banco de Dados: SQLalchemy - SQlite3; <br/>
+
+## Instalação
+
+1. Clone ou baixe este repositório em sua máquina local
+2. Acesse o diretório do projeto
+3. Instale as dependências necessárias: ```pip install -r requirements.txt```
+4. Configure as variáveis de ambiente necessárias, como as credenciais do banco de dados ou outras configurações específicas do seu ambiente.
+5. Inicie o servidor: ```py main.py```
+6. Acesse o software pelo seu navegador em [http://127.0.0.1:5000](http://127.0.0.1:5000)
