@@ -1,10 +1,10 @@
-from aplicacao import database ,login_manager
+from aplicacao import database ,login_manager, admin
 from flask import abort
 from datetime import datetime
 from flask_login import UserMixin, current_user
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.menu import MenuLink
-from aplicacao import admin, database
+
 
 @login_manager.user_loader
 def load_usuario(id_usuario):
