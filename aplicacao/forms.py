@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField, TextAreaField, BooleanField
-from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError, AnyOf
-from aplicacao.models import Usuario, Chamado
+from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
+from aplicacao.models import Usuario
 
 class FormLogin(FlaskForm):
     email = StringField("E-mail", validators=[DataRequired(), Email()])
@@ -12,7 +12,6 @@ class FormLogin(FlaskForm):
 class FormCriarConta(FlaskForm):
     matricula = StringField("ID Matrícula", validators=[DataRequired(), Length(6, 6)])
 
-    #AnyOf('Operações, Marketing, Administração, Segurança')], 
     departamento = SelectField("Departamento", validators=[DataRequired()],
                                 choices=[(0, 'Selecione seu departamento'), 
                                     ('Marketing','Marketing'),
