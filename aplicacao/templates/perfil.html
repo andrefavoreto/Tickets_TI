@@ -43,11 +43,27 @@ Aplicação - Perfil
             {{ form.problema.label }}
             {{ form.problema }}
         </div>
+        
+        {% if form.problema.errors %}
+        <div class="text-danger">
+            {% for error in form.problema.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </div>
+        {% endif %}
 
         <div class="descricao">
             {{ form.descricao.label }}
             {{ form.descricao(placeholder="Detalhe o ocorrido...") }}
         </div>
+
+        {% if form.descricao.errors %}
+        <div class="text-danger">
+            {% for error in form.descricao.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </div>
+        {% endif %}
 
         <div class="btn">
             {{ form.botao_confirmacao }}

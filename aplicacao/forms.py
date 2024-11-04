@@ -28,12 +28,18 @@ class FormCriarConta(FlaskForm):
     def validate_email(self, email): 
         usuario = Usuario.query.filter_by(email=email.data).first()
         if usuario:
-            return ValidationError("E-mail ou ID já cadastrado, faça login para continuar")
+            raise ValidationError("E-mail já cadastrado, faça login para continuar")
+        
+    def validate_matricula(self, matricula):
+        usuario = Usuario.query.filter_by(matricula=matricula.data).first()
+        if usuario:
+            raise ValidationError("Matrícula já cadastrada, faça login para continuar")
 
 class FormChamado(FlaskForm):
     problema = SelectField("Categoria", validators=[DataRequired()], 
                            choices=[(0, 'Selecione uma categoria'), 
-                                    ('Suspeita de vírus no computador','Dúvidas em geral'), 
+                                    ('Suspeita de vírus no computador', 'Suspeita de vírus no computador'),
+                                    ('Dúvidas em geral', 'Dúvidas em geral'), 
                                     ('Computador não liga','Computador não liga'), 
                                     ('Problemas no teclado e mouse','Problemas no teclado e mouse'), 
                                     ('Dúvidas em geral','Dúvidas em geral'), 
@@ -44,3 +50,6 @@ class FormChamado(FlaskForm):
     descricao = TextAreaField("Descrição", validators=[DataRequired()])
     botao_confirmacao = SubmitField("Enviar")
     
+    def validate_problema(self, problema):
+        if not int(problema.data):
+            raise ValidationError("Selecione uma opção válida!")

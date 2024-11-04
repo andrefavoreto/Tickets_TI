@@ -40,11 +40,27 @@
                 {{ form.email.label }}
                 {{ form.email(placeholder="Digite seu email...")}}
                 </div>
+
+                {% if form.email.errors %}
+                <div class="text-danger">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span><br>
+                    {% endfor %}
+                </div>
+                {% endif %}
         
                 <div class="campo">
                 {{ form.senha.label }}
                 {{ form.senha(placeholder="Digite sua senha...") }}
                 </div>
+
+                {% if form.senha.errors %}
+                <div class="text-danger">
+                    {% for error in form.senha.errors %}
+                        <span>{{ error }}</span><br>
+                    {% endfor %}
+                </div>
+                {% endif %}
         
                 <div class="bool">
                     {{ form.remember }}

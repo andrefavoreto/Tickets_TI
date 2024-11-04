@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect, flash
+from flask import render_template, url_for, redirect, flash, abort
 from aplicacao import app, database, bcrypt
 from aplicacao.models import Usuario, Chamado
 from flask_login import login_required, login_user, logout_user, current_user
@@ -22,44 +22,39 @@ def homepage():
 def criarconta():
     form_criarconta = FormCriarConta()
     if form_criarconta.validate_on_submit():
-        usuario_existe = Usuario.query.filter_by(email=form_criarconta.email.data).first()
-        matricula_existe = Usuario.query.filter_by(matricula=form_criarconta.matricula.data).first()
-        if (not usuario_existe) and (not matricula_existe):
-            senha = bcrypt.generate_password_hash(form_criarconta.senha.data).decode('utf-8')
-            usuario = Usuario(
-                    matricula=form_criarconta.matricula.data,
-                    departamento=form_criarconta.departamento.data, 
-                    username=form_criarconta.username.data,
-                    senha=senha, 
-                    email=form_criarconta.email.data)
-            database.session.add(usuario)
-            database.session.commit()
-            login_user(usuario, remember=True)
-            flash('Novo usuário adicionado')
-            return redirect(url_for("homepage"))
-        else:
-            flash('Email ou id já usados')
-            return redirect(url_for("criarconta"))
+        senha = bcrypt.generate_password_hash(form_criarconta.senha.data).decode('utf-8')
+        usuario = Usuario(
+                matricula=form_criarconta.matricula.data,
+                departamento=form_criarconta.departamento.data, 
+                username=form_criarconta.username.data,
+                senha=senha, 
+                email=form_criarconta.email.data)
+        database.session.add(usuario)
+        database.session.commit()
+        login_user(usuario, remember=True)
+        flash('Novo usuário adicionado')
+        return redirect(url_for("homepage"))
     return render_template("criarconta.html", form=form_criarconta)
 
 @app.route("/perfil/<id_usuario>", methods=["GET", "POST"])
 @login_required
 def perfil(id_usuario):
-    if int(id_usuario) == int(current_user.id):
-        form_chamado = FormChamado()
-        if form_chamado.validate_on_submit():
-            chamado = Chamado(problema=form_chamado.problema.data, 
-                              descricao=form_chamado.descricao.data, 
-                              data_criacao=datetime.utcnow(),
-                              id_usuario=current_user.id)
-            database.session.add(chamado)
-            database.session.commit()
-            flash('Novo chamado adicionado')
-            return redirect(url_for("feed"))
-        return render_template("perfil.html", usuario=current_user, form=form_chamado)
-    else:
-        usuario = Usuario.query.get(int(id_usuario))
-        return render_template("perfil.html", usuario=usuario, form=form_chamado)
+    form_chamado = FormChamado()
+
+    if not(int(id_usuario) == int(current_user.id)):
+        abort(403)
+    
+    if form_chamado.validate_on_submit():
+        print(form_chamado.problema)
+        chamado = Chamado(problema=form_chamado.problema.data, 
+                            descricao=form_chamado.descricao.data, 
+                            data_criacao=datetime.utcnow(),
+                            id_usuario=current_user.id)
+        database.session.add(chamado)
+        database.session.commit()
+        flash('Novo chamado adicionado')
+        return redirect(url_for("feed"))
+    return render_template("perfil.html", usuario=current_user, form=form_chamado)
     
 @app.route("/feed", methods=['GET'])
 @login_required

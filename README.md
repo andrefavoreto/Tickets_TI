@@ -1,6 +1,6 @@
-# Software para gerenciamento de chamados de TI
+# IT Help Desk
 
-O projeto a seguir se trata de software para gerenciamento de chamados, desenvolvido como parte do meu trabalho acadêmico na faculdade. O objetivo do software é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
+O projeto a seguir se trata de software para gerenciamento de chamados, desenvolvido como parte da disciplina PI-2. O objetivo da aplicação é fornecer uma solução eficiente e organizada para o controle e acompanhamento de chamados em uma empresa ou organização.
 
 ## Índice
 
@@ -25,9 +25,9 @@ Deixei criado por padrão um usuário com permissão de administrador. <br/>
 
 ## Técnologias Utilizadas
 
-- Linguagem de Programação: Python; <br/>
+- Linguagem de Programação: Python, Javascript; <br/>
 - Framework: Flask; <br/>
-- Banco de Dados: SQLalchemy - SQlite3; <br/>
+- Banco de Dados: SQlite3, SQLAlchemy ORM; <br/>
 
 ## Screenshots
 

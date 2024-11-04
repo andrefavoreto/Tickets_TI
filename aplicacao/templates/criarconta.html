@@ -17,11 +17,27 @@ Aplicação - Criar Conta
                 {{ form.matricula.label }}
                 {{ form.matricula(placeholder="Digite o ID da sua matrícula...")}}
             </div>
+
+            {% if form.matricula.errors %}
+            <div class="text-danger">
+                {% for error in form.matricula.errors %}
+                    <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% endif %}
     
             <div class="select">
                 {{ form.departamento.label }}
                 {{ form.departamento }}
             </div>
+
+            {% if form.departamento.errors %}
+            <div class="text-danger">
+                {% for error in form.departamento.errors %}
+                    <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
 
         <div class="linha">
@@ -30,10 +46,26 @@ Aplicação - Criar Conta
                 {{ form.email(placeholder="Digite seu email...")}}
             </div>
 
+            {% if form.email.errors %}
+            <div class="text-danger">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% endif %}
+
             <div class="campo">
                 {{ form.username.label }}
                 {{ form.username(placeholder="Digite seu nome de usuário...") }}
             </div>
+
+            {% if form.username.errors %}
+            <div class="text-danger">
+                {% for error in form.username.errors %}
+                    <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
         <div class="linha">
                 
@@ -41,6 +73,14 @@ Aplicação - Criar Conta
                 {{ form.senha.label }}
                 {{ form.senha(placeholder="Digite sua senha...") }}
             </div>
+
+            {% if form.senha.errors %}
+            <div class="text-danger">
+                {% for error in form.senha.errors %}
+                    <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% endif %}
     
             <div class="campo">
                 {{ form.confirmacao_senha.label }}
